@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import More from '../components/More.astro';
+---
+
+<Layout title="Hi, I'm CaptainYarb! 👋">
+	<main class="w-full md:max-w-2xl">
+		<div class="flex gap-4">
+			<img src="/images/noggin.png" alt="Chibi stylized head of Jonathan Yarbor" class="w-32 h-32 flex-none">
+			<div class="flex flex-col gap-6">
+				<div class="flex flex-col gap-2 bg-slate-950 p-6 border-4 border-sky-700 grow w-full font-pixel">
+					<h1 class="font-pixel text-sky-50">
+						Hi, my name is <span class="text-orange-600">CaptainYarb</span>!
+					</h1>
+					<p class="text-sky-200 text-xs leading-5">IRL, folks call me <u class="no-underline border-b-2 border-dashed border-sky-300">Jonathan Yarbor</u>. I'm an proud father, startup entreprenuer, fullstack software architect, &amp; gamer.</p>
+				</div>
+				<!-- <More></More> -->
+			</div>
+		</div>
+	</main>
+	
+</Layout>
