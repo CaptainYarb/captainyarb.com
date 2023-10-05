@@ -20,6 +20,7 @@
   "devDependencies": {
     "@nodecraft/eslint-config": "^28.0.0",
     "eslint": "^8.50.0",
-    "eslint-plugin-unicorn": "^48.0.1"
+    "eslint-plugin-unicorn": "^48.0.1",
+    "typeit": "^8.7.1"
   }
 }

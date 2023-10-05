@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import Game from '../components/Game.astro';
 ---
 
 <!doctype html>
@@ -18,7 +19,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-slate-800 text-slate-300 flex items-center gap-6 justify-center flex-col h-full">
+	<body class="bg-slate-800 text-slate-300 flex items-center gap-6 p-4 justify-center flex-col h-full relative">
 		<slot />
+		<Game></Game>
 	</body>
 </html>

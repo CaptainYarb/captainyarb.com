@@ -1,19 +1,97 @@
-<aside class="grid grid-cols-1 sm:grid-cols-3 w-full md:max-w-2xl gap-6">
-	<div class="col-span-2 bg-slate-900 p-6 border-4 border-sky-800">
-		<h2 class="font-pixel text-sm text-orange-600 mb-6">Career</h2>
-		<ul>
-			<li>
+---
+import Tag from './Tag.astro';
+---
+<aside class="grid grid-cols-1 sm:grid-cols-2 w-full md:max-w-2xl gap-6">
+	<div class="bg-slate-900 p-6 border-4 border-sky-800">
+		<div class="flex gap-2 items-center mb-6">
+			<img src="/images/scroll.svg" height="24" width="24" role="presentation">
+			<h2 class="font-pixel text-sm text-orange-600">Career</h2>
+		</div>
+		<ul class="flex flex-col gap-4">
+			<li class="flex flex-col gap-1">
 				<p class="font-pixel text-[.65rem]">
-					CEO of <a href="https://nodecraft.com" target="_blank">Nodecraft</a>
+					CEO of <a href="https://nodecraft.com" target="_blank" class="text-slate-200 hover:text-orange-600">Nodecraft</a>
 				</p>
-				<div class="font-pixel flex gap-2 text-[.45rem]">
-					<span class="bg-orange-900 text-orange-100 px-1 rounded">Founder</span>
-					<span class="bg-orange-900 text-orange-100 px-1 rounded">Software Engineer</span>
+				<div class="flex gap-1 items-start flex-wrap px-2">
+					<Tag label="Founder"></Tag>
+					<Tag label="Software Engineer"></Tag>
+					<Tag label="UI / UX"></Tag>
+					<Tag label="Head of Product"></Tag>
+				</div>
+			</li>
+			<li class="flex flex-col gap-1">
+				<p class="font-pixel text-[.65rem]">
+					Advisor of <a href="https://pawlushgrooming.com" target="_blank" class="text-slate-200 hover:text-orange-600">Pawlush</a>
+				</p>
+				<div class="flex gap-1 items-start flex-wrap px-2">
+					<Tag label="Board Member"></Tag>
+					<Tag label="UI / UX"></Tag>
+				</div>
+			</li>
+			<li class="py-4 font-pixel text-xs text-slate-500">
+				Old Roles
+			</li>
+			<li class="flex flex-col gap-1">
+				<p class="font-pixel text-[.65rem]">
+					Mod of <a href="https://sammyservers.com" target="_blank" class="text-slate-200 hover:text-orange-600">Sammyservers</a>
+				</p>
+				<div class="flex gap-1 items-start flex-wrap px-2">
+					<Tag label="Game Dev"></Tag>
+					<Tag label="Web Design"></Tag>
+					<Tag label="Game Servers"></Tag>
+				</div>
+			</li>
+			<li class="flex flex-col gap-1">
+				<p class="font-pixel text-[.65rem]">
+					Blazed Designs
+				</p>
+				<div class="flex gap-1 items-start flex-wrap px-2">
+					<Tag label="Sole Proprietor"></Tag>
+					<Tag label="Web Dev"></Tag>
+					<Tag label="Graphic Design"></Tag>
+					<Tag label="Video Prod"></Tag>
+					<Tag label="Biz & Small Gov Consultant"></Tag>
 				</div>
 			</li>
 		</ul>
 	</div>
 	<div class="bg-slate-900 p-6 border-4 border-sky-800">
-		<h2 class="font-pixel text-sm text-orange-600">Links</h2>
+		<div class="flex gap-2 items-center mb-6">
+			<img src="/images/globe.svg" height="24" width="24" role="presentation">
+			<h2 class="font-pixel text-sm text-orange-600">Links</h2>
+		</div>
+		<ul class="font-pixel text-[.6rem] gap-2 flex flex-col">
+			<li class="">
+				<a href="https://linkedin.com/in/captainyarb" target="_blank" class="text-slate-200 hover:text-orange-600">LinkedIn</a>
+			</li>
+			<li class="text-slate-200">
+				<a href="https://github.com/captainyarb/" target="_blank" class="text-slate-200 hover:text-orange-600">Github</a>
+			</li>
+			<li class="text-slate-200">
+				<a href="https://tiktok.com/@captainyarb" target="_blank" class="text-slate-200 hover:text-orange-600">Tiktok</a>
+			</li>
+			<li class="text-slate-200">
+				Discord: <span class="select-text text-white">CaptainYarb</span>
+			</li>
+			<li class="text-slate-200">
+				<a href="https://reddit.com/u/blazedd" target="_blank" class="text-slate-200 hover:text-orange-600">Reddit</a>
+			</li>
+			<li class="text-slate-200">
+				<a href="https://steamcommunity.com/id/captainyarb/" target="_blank" class="text-slate-200 hover:text-orange-600">Steam</a>
+			</li>
+			<li class="text-slate-200">
+				<a href="https://staging.bsky.app/profile/captainyarb.com" target="_blank" class="text-slate-200 hover:text-orange-600">Bluesky</a>
+			</li>
+			<li class="line-through	decoration-2">
+				<a href="https://twitter.com/captainyarb" target="_blank" class="text-slate-400 hover:text-orange-600">Twitter</a>
+			</li>
+			<li class="line-through	decoration-2">
+				<span class="text-slate-400">Facebook</span>
+			</li>
+			<!-- <li class="text-slate-200 mt-4">
+				<a href="/contact" target="_blank" class="text-slate-200 hover:text-orange-600
+				">How to message me</a>
+			</li> -->
+		</ul>
 	</div>
 </aside>

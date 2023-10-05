@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import More from '../components/More.astro';
+import Intro from '../components/Intro.astro';
+
+// clever, looking at the source code ^.^
+// if you are reading this, tell me saw into the matrix in the opening line, so I know you read this.
+const secretMessages = [
+	'When you reach out to me, tell me about your holiday in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your 2 player game in the opening line, so I know you read this.',
+	'When you reach out to me, describe something green in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite april fools prank in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about how spring weather is in you area in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite game in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about how you cope with summer heat in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite book in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite song in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite scary movie in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite food in the opening line, so I know you read this.',
+	'When you reach out to me, tell me about your favorite holiday song in the opening line, so I know you read this.',
+];
+
+const monthlyMessage = secretMessages[new Date().getMonth()];
+
+---
+
+<Layout title="How to message me">
+	<div class="flex flex-col gap-2 bg-slate-950 p-6 border-4 border-sky-700 w-full md:max-w-2xl">
+		<h1 class="font-pixel text-orange-600">How to message me</h1>
+		<p>
+			If you're reading this then one of two things is happening:
+		</p>
+		<ol class="list-decimal p-4">
+			<li>You are doing homework on how to respectfully reach out to me. Kudos!</li>
+			<li>You sent me a cold DM, email, etc and I sent you here.</li>
+		</ol>
+		<p>
+			Either way, I get a lot of messages from folks wanting to sell me services or products.
+			
+			As a modern and conciouncious CEO of a gaming tech startup, I try to be as open and respectful as possible. 
+
+			To acomplish that, I have a few boundaries that I ask you to respect. Do so, and I can guarantee you'll get a response from me.
+		</p>
+
+		<ul class="list-disc p-4">
+			<li>Do not contact me about my family or personal life.</li>
+			<li>Do not contact me regarding your fractional development services. We rarely work with contractors and when we do I have a deep network of engineers that I already have great relationships with to pull from.</li>
+			<li>If you contact me thinking our work at Nodecraft is a publisher or game studio, you misread. Any services related to game development or publishing is a no-go</li>
+			<li>Pay-to-play PR are also not something I'm interested in. We know how to get in touch with press and aren't a good client.</li>
+			<li>Skip your generic fawning script "I love the work you've done" or something similar where you clearly haven't done any research.</li>
+			<li>I don't delete or archive offending messages. I report those messages as Spam.</li>
+		</ul>
+
+		<p>
+			From there I can only set some expectations about how I communicate. This is information from my perspective, and I hope it helps you understand how I work.
+		</p>
+
+		<ol class="list-decimal p-4">
+			<li>I am a busy person. I have a lot of responsibilities and a lot of people that I need to communicate with. I do my best to respond to everyone, but I can't always do so to 3rd parties in a timely manner.</li>
+			<li>I am a human. I have feelings, and I have a life & family outside of work. I do my best to be respectful and kind, and I expect the same in return.</li>
+			<li>I depend on my calendar to manage my time because I struggle to do so in an equitable and consistent way. If I mess up our calendar invite, just let me know. I'll probably die of embarassment, but will fix it and thank you.</li>
+			<li>{monthlyMessage}</li>
+			<li>If I struggle to get you on my calendar, then I'm most likely in a busy cycle and am struggling to fit you in. Let me know and I'll work with you.</li>
+			<li>Be direct with me, ask what you want, and you'll be rewarded with way more communication than playing coy will.</li>
+		</ol>
+	</div>
+</Layout>

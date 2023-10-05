@@ -1,0 +1,99 @@
+<canvas id="game" width="500" height="500" class="inset-0 fixed -z-10 md:motion-reduce:hidden hidden md:block"></canvas>
+<script>
+	function init(){
+		const canvas = document.getElementById('game') as HTMLCanvasElement | null;
+		if(!canvas){ return; }
+		const ctx = canvas.getContext('2d');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		let x = canvas.width / 2;
+		let y = canvas.height / 2;
+		let speed = 2;
+		let direction = 'up';
+
+		let autopilot = true;
+		
+		function drawShip(){
+		if(!canvas || !ctx){ return; }
+			ctx.save();
+			ctx.translate(x, y);
+			ctx.rotate(Math.PI / 2 * ['down', 'left', 'up', 'right'].indexOf(direction));
+			ctx.beginPath();
+			ctx.strokeStyle = '#fff';
+			ctx.fillStyle = '#000';
+			ctx.moveTo(-10, -10);
+			ctx.lineTo(0, 10);
+			ctx.lineTo(10, -10);
+			ctx.closePath();
+			ctx.stroke();
+
+			// randomly create flame out back
+			if(Math.random() > 0.5){
+				ctx.beginPath();
+				ctx.strokeStyle = '#ea580b';
+				ctx.moveTo(-5, -10);
+				ctx.lineTo(0, -20);
+				ctx.lineTo(5, -10);
+				ctx.closePath();
+				ctx.stroke();
+			}
+
+			ctx.restore();
+		}
+		
+		setInterval(() => {
+			if(!autopilot){ return; }
+			const directions = ['left', 'right', 'up', 'down'];
+			// remove current direction
+			directions.splice(directions.indexOf(direction), 1);
+			direction = directions[Math.floor(Math.random() * directions.length)];
+		}, 1750);
+
+		function moveShip(event: KeyboardEvent){
+			event.preventDefault();
+			autopilot = false;
+			if(event.key == 'ArrowLeft'){
+				direction = 'left';
+			}else if(event.key == 'ArrowRight'){
+				direction = 'right';
+			}else if(event.key == 'ArrowUp'){
+				direction = 'up';
+			}else if(event.key == 'ArrowDown'){
+				direction = 'down';
+			}
+		}
+		document.addEventListener('keydown', moveShip);
+		
+		function update(){
+			if(!canvas || !ctx){ return; }
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			if(direction == 'left'){
+				x -= speed;
+			}else if(direction == 'right'){
+				x += speed;
+			}else if(direction == 'up'){
+				y -= speed;
+			}else if(direction == 'down'){
+				y += speed;
+			}
+			if(x < 0){
+				x = canvas.width;
+			}else if(x > canvas.width){
+				x = 0;
+			}
+			if(y < 0){
+				y = canvas.height;
+			}else if(y > canvas.height){
+				y = 0;
+			}
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			if(canvas.width > 768){
+				drawShip();
+			}
+			requestAnimationFrame(update);
+		}
+		update();
+	}
+	init();
+</script>
